@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aditya Mohan | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth}
+body{background:#000;color:#fff}
+
+/* HEADER */
+header{
+  position:fixed;top:0;left:0;width:100%;padding:20px 8%;
+  display:flex;justify-content:space-between;align-items:center;
+  background:transparent;z-index:100
+}
+header h2{font-size:24px;font-weight:600}
+nav{display:flex;gap:30px}
+nav a{color:#fff;text-decoration:none;font-weight:500}
+nav a:hover{color:#00ffee}
+
+/* HAMBURGER */
+.hamburger{
+  display:none;flex-direction:column;cursor:pointer;z-index:110
+}
+.hamburger span{
+  width:25px;height:3px;background:#fff;margin:4px 0;border-radius:2px;transition:0.3s
+}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}
+
+/* SECTIONS */
+section{padding:100px 8%}
+.home{min-height:100vh;display:flex;align-items:center;justify-content:space-between}
+.home-text h1{font-size:48px;line-height:1.2}
+.home-text h1 span{color:#00ffee}
+.home-text h3{font-size:24px;margin:15px 0}
+.home-text p{max-width:500px;color:#ccc}
+
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:12px 28px;
+  border-radius:30px;
+  font-weight:600;
+  text-decoration:none;
+  background:transparent;
+  color:#00ffee;
+  border:2px solid #00ffee;
+  transition:all 0.3s ease;
+}
+
+.btn:hover{
+  background:#00ffee;
+  color:#000;
+}
+
+
+.home-img img{width:320px;border-radius:50%;border:4px solid #00ffee}
+
+/* ABOUT */
+.about{background:#0b0b0b;display:flex;gap:60px;align-items:center}
+.about img{width:300px;border-radius:20px}
+.about-text h2{font-size:36px}
+.about-text h2 span{color:#00ffee}
+.about-text p{margin-top:15px;color:#ccc;line-height:1.7}
+
+/* SKILLS */
+.skills h2,.projects h2,.contact h2{text-align:center;font-size:36px;margin-bottom:50px}
+.skills h2 span,.projects h2 span,.contact h2 span{color:#00ffee}
+.skill-box{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px}
+.skill{
+  background:#0b0b0b;padding:25px;border-radius:20px;text-align:center;
+  transition:transform 0.5s ease, box-shadow 0.5s ease;position:relative;
+}
+.skill:hover{transform:translateY(-12px) scale(1.03);box-shadow:0 20px 40px rgba(0,255,238,0.25)}
+.skill::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(0,255,238,0.15),transparent);opacity:0;transition:opacity 0.5s}
+.skill:hover::after{opacity:1}
+
+/* PROJECTS */
+.project-box{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+.project{
+  background:#0b0b0b;border-radius:20px;overflow:hidden;transition:transform 0.5s ease, box-shadow 0.5s ease;position:relative
+}
+.project:hover{transform:translateY(-12px) scale(1.03);box-shadow:0 20px 40px rgba(0,255,238,0.25)}
+.project::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(0,255,238,0.15),transparent);opacity:0;transition:opacity 0.5s}
+.project:hover::after{opacity:1}
+.project img{width:100%;display:block}
+.project div{padding:20px}
+
+/* CONTACT */
+.contact form{max-width:600px;margin:auto;display:flex;flex-direction:column;gap:15px}
+.contact input,.contact textarea{padding:12px;border:none;border-radius:10px}
+.contact button{padding:12px;border:none;border-radius:30px;background:#00ffee;font-weight:600}
+
+.contact-info{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+  max-width:800px;
+  margin:auto;
+  text-align:center;
+}
+
+.contact-item{
+  background:#0b0b0b;
+  padding:30px;
+  border-radius:20px;
+  transition:transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.contact-item:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 40px rgba(0,255,238,0.25);
+}
+
+.contact-item h3{
+  margin-bottom:10px;
+}
+
+.contact-item a{
+  color:#00ffee;
+  text-decoration:none;
+  word-break:break-word;
+}
+
+.contact-item a:hover{
+  text-decoration:underline;
+}
+
+
+footer{text-align:center;padding:20px;color:#777}
+
+/* MOBILE */
+@media(max-width:900px){
+  .home{flex-direction:column;text-align:center}
+  .home-img{margin-top:40px}
+  .about{flex-direction:column;text-align:center}
+
+  .hamburger{display:flex}
+
+  nav{
+    position:absolute;top:70px;right:8%;background:#0b0b0b;flex-direction:column;width:200px;padding:20px;border-radius:12px;display:none;z-index:100
+  }
+  nav.active{display:flex}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h2>Aditya Mohan</h2>
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav id="navMenu">
+    <a href="#home" class="nav-link">Home</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+</header>
+
+<section class="home" id="home">
+  <div class="home-text">
+    <h1>Hi, I'm <span>Aditya Mohan</span></h1>
+    <h3>Computer Science Student</h3>
+    <p>I am a B.Tech CSE student graduating in 2026, passionate about web development, programming, and software engineering.</p>
+    <div class="home-buttons">
+  <a href="#contact" class="btn">Hire Me</a>
+  <a href="resume.pdf" target="_blank" class="btn resume-btn">Resume</a>
+</div>
+
+  </div>
+  <div class="home-img"><img src="profile.jpg" alt="profile"></div>
+</section>
+
+<section class="about" id="about">
+  <img src="profile.jpg" alt="about">
+  <div class="about-text">
+    <h2>About <span>Me</span></h2>
+    <p>I am a dedicated Computer Science student with skills in HTML, CSS, JavaScript, React, and C++. I enjoy building responsive websites and solving real-world problems.</p>
+  </div>
+</section>
+
+<section class="skills" id="skills">
+  <h2>My <span>Skills</span></h2>
+  <div class="skill-box">
+    <div class="skill"><h3>HTML</h3></div>
+    <div class="skill"><h3>CSS</h3></div>
+    <div class="skill"><h3>JavaScript</h3></div>
+    <div class="skill"><h3>React</h3></div>
+    <div class="skill"><h3>C++</h3></div>
+  </div>
+</section>
+
+<section class="projects" id="projects">
+  <h2>My <span>Projects</span></h2>
+  <div class="project-box">
+    <div class="project">
+      <div>
+        <h3>College Cafe Website</h3>
+        <p style="color:#ccc;margin-top:8px">A responsive college cafe website with menu display, ordering interface, and modern UI built using HTML, CSS, and JavaScript.</p>
+      </div>
+    </div>
+    <div class="project">
+      <div>
+        <h3>Fake News Detection System</h3>
+        <p style="color:#ccc;margin-top:8px">An NLP-based fake news detection system that classifies news as real or fake using text preprocessing and machine learning techniques.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Contact <span>Me</span></h2>
+  <div class="contact-info">
+  <div class="contact-item">
+    <h3>📞 Phone</h3>
+    <p>+91 7488224162</p>
+  </div>
+
+  <div class="contact-item">
+    <h3>📧 Email</h3>
+    <p>
+      <a href="https://mail.google.com/mail/?tab=rm&ogbl">ranjanaditya1920@gmail.com</a>
+    </p>
+  </div>
+
+  <div class="contact-item">
+    <h3>🔗 LinkedIn</h3>
+    <p>
+      <a href="https://www.linkedin.com/in/aditya-mohan-a890b4328/">
+        Aditya Mohan
+      </a>
+    </p>
+  </div>
+</div>
+
+</section>
+
+<footer>© 2026 Aditya Mohan | Portfolio</footer>
+
+<script>
+// Typing animation
+const roles=["Web Developer","Programmer","CSE Student"];
+let roleIndex=0,charIndex=0;
+const roleElement=document.querySelector('.home-text h3');
+function typeEffect(){if(charIndex<roles[roleIndex].length){roleElement.textContent+=roles[roleIndex].charAt(charIndex);charIndex++;setTimeout(typeEffect,100);}else{setTimeout(eraseEffect,1500);}}
+function eraseEffect(){if(charIndex>0){roleElement.textContent=roles[roleIndex].substring(0,charIndex-1);charIndex--;setTimeout(eraseEffect,60);}else{roleIndex=(roleIndex+1)%roles.length;setTimeout(typeEffect,300);}}
+roleElement.textContent="";typeEffect();
+
+// Scroll reveal
+const revealElements=document.querySelectorAll('section');
+function revealOnScroll(){const windowHeight=window.innerHeight;revealElements.forEach(el=>{const revealTop=el.getBoundingClientRect().top;if(revealTop<windowHeight-150){el.style.opacity=1;el.style.transform='translateY(0)';}});}
+revealElements.forEach(el=>{el.style.opacity=0;el.style.transform='translateY(80px)';el.style.transition='all 0.8s ease';});
+window.addEventListener('scroll',revealOnScroll);revealOnScroll();
+
+// Hamburger toggle with X animation
+document.addEventListener("DOMContentLoaded",function(){
+  const hamburger=document.getElementById("hamburger");
+  const navMenu=document.getElementById("navMenu");
+  hamburger.addEventListener("click",()=>{navMenu.classList.toggle("active"); hamburger.classList.toggle("active");});
+  document.querySelectorAll(".nav-link").forEach(link=>{link.addEventListener("click",()=>{navMenu.classList.remove("active"); hamburger.classList.remove("active");});});
+});
+</script>
+
+</body>
+</html>
