@@ -91,65 +91,6 @@ section{padding:100px 8%}
 .project div{padding:20px}
 
 
-/* CERTIFICATES */
-.certificates h2{
-  text-align:center;
-  font-size:36px;
-  margin-bottom:50px;
-}
-.certificates h2 span{color:#00ffee}
-
-.certificate-box{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
-}
-
-.certificate{
-  background:#0b0b0b;
-  padding:25px;
-  border-radius:20px;
-  text-align:center;
-  transition:transform 0.5s ease, box-shadow 0.5s ease;
-  position:relative;
-}
-
-.certificate:hover{
-  transform:translateY(-12px) scale(1.03);
-  box-shadow:0 20px 40px rgba(0,255,238,0.25);
-}
-
-.certificate::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:linear-gradient(120deg,transparent,rgba(0,255,238,0.15),transparent);
-  opacity:0;
-  transition:opacity 0.5s;
-}
-
-.certificate:hover::after{opacity:1}
-
-.certificate h3{
-  margin-bottom:10px;
-}
-
-.certificate p{
-  color:#ccc;
-  font-size:14px;
-}
-
-.certificate a{
-  display:inline-block;
-  margin-top:15px;
-  color:#00ffee;
-  text-decoration:none;
-  font-weight:500;
-}
-
-.certificate a:hover{
-  text-decoration:underline;
-}
 
 
 /* CONTACT */
@@ -280,23 +221,7 @@ footer{text-align:center;padding:20px;color:#777}
   </div>
 </section>
 
-<section class="certificates" id="certificates">
-  <h2>My <span>Certificates</span></h2>
 
-  <div class="certificate-box">
-    <div class="certificate">
-      <h3>Web Development</h3>
-      <p>Full Stack certification by Apna College.</p>
-      <a href="certificate-delta-batch-20-659e5afc7fa67ec97205fc76.pdf" target="_blank">View Certificate</a>
-    </div>
-
-    <div class="certificate">
-      <h3>Cybersecurity</h3>
-      <p>Cybersecurity Job Simulation certification by Forage.</p>
-      <a href="mohan forage.pdf" target="_blank">View Certificate</a>
-    </div>
-  </div>
-</section>
 
 
 <section class="contact" id="contact">
@@ -354,3 +279,4 @@ document.addEventListener("DOMContentLoaded",function(){
 
 </body>
 </html>
+
